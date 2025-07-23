@@ -4,7 +4,8 @@ import connectDB from "./Database/connectDB";
 import authRoute from "./routes/auth";
 import userRoute from "./routes/users";
 import productRoute from "./routes/products";
-
+import addressRoute from "./routes/addresses";
+import orderRoute from "./routes/order";
 import { errorHandler } from "./middlewares/error";
 import cookieParser from 'cookie-parser';
 import verifyToken from "./middlewares/verifyToken";
@@ -26,6 +27,8 @@ app.get('/', (req, res) => {
 app.use('/api/auth/', authRoute)
 app.use('/api/user/', verifyToken, userRoute)
 app.use('/api/product/', verifyToken, productRoute)
+app.use('/api/address/', verifyToken, addressRoute)
+app.use('/api/order/', verifyToken, orderRoute)
 
 
 app.use(errorHandler)

@@ -10,7 +10,10 @@ const AddressSchema = new Schema({
     zilla: { type: String, required: true },
     zipCode: { type: String, required: true },
     country: { type: String, required: true },
-    createdAt: { type: Date, default: Date.now }
+    createdAt: { type: Date, default: Date.now },
+    updatedAt: { type: Date, default: Date.now }
 })
 
 const Address = mongoose.model<AddressType>("Address", AddressSchema)
+
+export default Address;
